@@ -16,7 +16,7 @@ const formatDate = (): string => {
     
     return `${year}-${month}-${day}`; // YYYY-MM-DD 형식으로 반환
 };
-const url : string = "http://3.38.175.70/node";
+const url : string = "http://3.35.227.241/node";
 
 // 각 food_id에 대해 정보를 가져오는 함수
 const getFoodInfoById = async (food_id: number): Promise<any> => {
@@ -117,7 +117,7 @@ export default function init(server: http.Server) {
                 // 기본값 설정
                 const queryDate = date || formatDate();
                 
-                console.log(`💬 Received message in room ${roomId}: ${msg}`);
+                console.log(`💬 Received message in room ${roomId}: ${msg} ,,, ${date}`);
                 
                 // dietPlan 데이터 가져오기
                 const dietPlanResponse = await axios.get<DietPlanResponseDTO>(`${url}/dietPlan/${u_id}/${queryDate}`);
